@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    parameters {
-        choice choices: ['MAVEN', 'GRADLE'], description: 'Choice a tool for dependencies', name: 'DEPENDENCIES'
-    }
     options {
         buildDiscarder(logRotator(daysToKeepStr: '10', numToKeepStr: '10'))
         timeout(time: 12, unit: 'HOURS')
